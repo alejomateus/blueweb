@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TeamService} from './../team.service';
 
 @Component({
   selector: 'app-us',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./us.component.scss']
 })
 export class UsComponent implements OnInit {
-
-  constructor() { }
+	team: any[]=[]
+  constructor( private _servicio: TeamService) {
+  	this.team=_servicio.team;
+  }
 
   ngOnInit() {
   }

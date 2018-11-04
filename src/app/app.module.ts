@@ -4,11 +4,15 @@ import { RouterModule, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-
+//Services
+import {TeamService} from './team.service';
+//Components
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { UsComponent } from './us/us.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { TeamComponent } from './team/team.component'
+
 
 const routes : Routes =[
 {path:"contact",component: ContactComponent},
@@ -18,6 +22,7 @@ const routes : Routes =[
 pathMatch: 'full',
 component: HomeComponent
 },
+{path:"team/:id",component: TeamComponent},
   { path: '**', component: PageNotFoundComponent }
 ]
 @NgModule({
@@ -28,13 +33,16 @@ component: HomeComponent
   ContactComponent,
   HomeComponent,
   UsComponent,
-  PageNotFoundComponent
+  PageNotFoundComponent,
+  TeamComponent
   ],
   imports: [
   BrowserModule,
   RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    TeamService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

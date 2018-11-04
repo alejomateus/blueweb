@@ -1,3 +1,11 @@
-<p>
-  us works!
-</p>
+<div class="mt-5">
+	<h2>Us</h2>
+	<p></p>
+	<ul class="list-group">
+		<li class="list-group-item mt-5" *ngFor="let item of team; index as i">
+			<h6>Name: {{item.name}}</h6>
+			<h6>Occupation: {{item.occupation}}</h6>
+			<a [routerLink]="['/team',i]">Read more...</a>
+		</li>
+	</ul>
+</div>

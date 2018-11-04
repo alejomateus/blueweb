@@ -1,5 +1,5 @@
 <app-header></app-header>
-<h1 class="container bg-dark text-white">ngIf show {{show}}</h1>
+<!-- <h1 class="container bg-dark text-white">ngIf show {{show}}</h1>
 <div class="container" >
     <button class="btn btn-warning" (click)="show=!show" >Ver</button>
     <div ngClass="pt-3"></div>
@@ -9,6 +9,25 @@
 </div>
 <div class="container">
     <p class="text-danger">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione minima, autem praesentium fugiat molestiae, et dolore at fuga enim laborum, nemo sed exercitationem. Rerum recusandae commodi voluptatum, sit mollitia alias!</p>
+</div> -->
+<div class="container">
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Tipo</th>
+				<th scope="col">Nombre</th>
+				<th scope="col">Edad</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let animal of animales;index as i">
+				<th scope="row">{{i+1}}</th>
+				<td>{{animal.tipo}}</td>
+				<td>{{animal.nombre}}</td>
+				<td>{{animal.edad}}</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
-
 <app-footer></app-footer>
